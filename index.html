@@ -1594,43 +1594,53 @@
                     <div class="p-5 wow fadeInUp" data-wow-delay="0.2s">
                         <h5 class="section-title ff-secondary text-start text-primary fw-normal">Rezervacije</h5>
                         <h1 class="text-white mb-4">Rezerviši sto online</h1>
-                        <form>
+                        <form action="https://formspree.io/f/manqqpaq" method="POST" id="reservation-form">
                             <div class="row g-3">
+                                <!-- Name Field -->
                                 <div class="col-md-6">
                                     <div class="form-floating">
-                                        <input type="text" class="form-control" id="name" placeholder="Your Name">
+                                        <input type="text" class="form-control" id="name" name="name" placeholder="Your Name" required>
                                         <label for="name">Ime</label>
                                     </div>
                                 </div>
+                                <!-- Email Field -->
                                 <div class="col-md-6">
                                     <div class="form-floating">
-                                        <input type="email" class="form-control" id="email" placeholder="Your Email">
+                                        <input type="email" class="form-control" id="email" name="email" placeholder="Your Email" required>
                                         <label for="email">Email</label>
                                     </div>
                                 </div>
+                                <!-- Date and Time Field -->
                                 <div class="col-md-6">
                                     <div class="form-floating date" id="date3" data-target-input="nearest">
-                                        <input type="text" class="form-control datetimepicker-input" id="datetime" placeholder="Date & Time" data-target="#date3" data-toggle="datetimepicker" />
+                                        <input type="text" class="form-control datetimepicker-input" id="datetime" name="datetime" placeholder="Date & Time" required>
                                         <label for="datetime">Datum i vreme</label>
                                     </div>
                                 </div>
+                                <!-- Number of People Field -->
                                 <div class="col-md-6">
                                     <div class="form-floating">
-                                        <input type="text" class="form-control" id="name" placeholder="Your Name">
-                                        <label for="name">Broj ljudi</label>
+                                        <input type="text" class="form-control" id="people" name="people" placeholder="Number of People" required>
+                                        <label for="people">Broj ljudi</label>
                                     </div>
                                 </div>
+                                <!-- Special Request Field -->
                                 <div class="col-12">
                                     <div class="form-floating">
-                                        <textarea class="form-control" placeholder="Special Request" id="message" style="height: 100px"></textarea>
+                                        <textarea class="form-control" placeholder="Special Request" id="message" name="message" style="height: 100px" required></textarea>
                                         <label for="message">Specijalni zahtev</label>
                                     </div>
                                 </div>
+                                <!-- Submit Button -->
                                 <div class="col-12">
                                     <button class="btn btn-primary w-100 py-3" type="submit">Rezerviši</button>
                                 </div>
                             </div>
                         </form>
+                        <div id="success-message" style="display: none; color: green; margin-top: 20px;">
+                            Vaša rezervacija je uspešno poslata!
+                        </div>
+                        
                     </div>
                 </div>
             </div>
@@ -1682,7 +1692,7 @@
                         <p>Kafana sa dušom! Opustila sam se uz fantastičnu muziku i prijatnu atmosferu. Usluga je bila brza, a porcije odlične. Preporučujem!</p>
                         <div class="d-flex align-items-center">
                             <div class="ps-3">
-                                <h5 class="mb-1">Veljko</h5>
+                                <h5 class="mb-1">Ana</h5>
                                 <small></small>
                             </div>
                         </div>
@@ -1692,7 +1702,7 @@
                         <p>Jedno od boljih mesta u gradu. Pivo je uvek hladno, a roštilj savršen. Idealno za vikend opuštanje sa prijateljima.</p>
                         <div class="d-flex align-items-center">
                             <div class="ps-3">
-                                <h5 class="mb-1">Ana</h5>
+                                <h5 class="mb-1">Veljko</h5>
                                 <small></small>
                             </div>
                         </div>
@@ -1794,6 +1804,8 @@
 
     <!-- Template Javascript -->
     <script src="js/main.js"></script>
+    <script src="js/reservation.js"></script>
+
 </body>
 
 </html>
